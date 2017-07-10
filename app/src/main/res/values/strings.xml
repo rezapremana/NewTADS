@@ -22,8 +22,8 @@
         <item>Home</item>
         <item>Nearby</item>
         <item>Feed</item>
-        <item>Top Stores</item>
         <item>Notifications</item>
+        <item>Top Stores</item>
         <item>Settings</item>
     </string-array>
 
