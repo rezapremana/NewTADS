@@ -3,12 +3,19 @@ package info.androidhive.navigationdrawer.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import info.androidhive.navigationdrawer.R;
+import info.androidhive.navigationdrawer.fragment.feed.MyFeedFragment;
+import info.androidhive.navigationdrawer.fragment.feed.MyLocalFeedFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +36,11 @@ public class FeedFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    public static TabLayout tabLayout;
+    public static ViewPager viewPager;
+    public static int int_items = 2;
+
 
     public FeedFragment() {
         // Required empty public constructor
@@ -64,8 +76,25 @@ public class FeedFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //inflate tab layout and setup views
+
+        View x = inflater.inflate(R.layout.fragment_feedback,null);
+                tabLayout = (TabLayout) x.findViewById(R.id.tabs);
+                viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+
+        // set and adapter for view pager
+        viewPager.setAdapter(new MyAdapter(getChildFragmentManager()));
+
+        tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                tabLayout.setupWithViewPager(viewPager);
+            }
+        });
+        return x;
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feedback, container, false);
+//        return inflater.inflate(R.layout.fragment_feedback, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -105,5 +134,40 @@ public class FeedFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    class MyAdapter extends FragmentPagerAdapter {
+
+        public MyAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    return new MyLocalFeedFragment();
+                case 1:
+                    return new MyFeedFragment();
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return int_items;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "LOCAL FEED";
+                case 1:
+                    return "MY FEED";
+            }
+            return null;
+
+        }
     }
 }
