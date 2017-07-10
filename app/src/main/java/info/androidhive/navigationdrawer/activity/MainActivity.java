@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     // urls to load navigation header background image
     // and profile image
     private static final String urlNavHeaderBg = "http://www.viva-vista.sg/wp-content/uploads/shopping-Background.jpg";
-    private static final String urlProfileImg = "https://lh3.googleusercontent.com/eCtE_G34M9ygdkmOpYvCag1vBARCmZwnVS6rS5t4JLzJ6QgQSBquM0nuTsCpLhYbKljoyS-txg";
+    private static final String urlProfileImg = "http://network.ameriska.net/static/images/person.png";
 
     // index to identify current nav menu item
     public static int navItemIndex = 0;
