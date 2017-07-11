@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.androidhive.navigationdrawer.fragment.FeedFragment">
+    tools:context="info.androidhive.navigationdrawer.fragment.FeedFragment"
+    android:orientation="vertical">
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             app:tabGravity="fill"
@@ -16,11 +19,27 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto">
         </android.support.design.widget.TabLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="2dp"
+                    android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="saasdasdasdasdasdasd"/>
+                </LinearLayout>
+        </LinearLayout>
+
 
         <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</FrameLayout>
+
+</LinearLayout>
 
 
