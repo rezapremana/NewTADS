@@ -1,4 +1,4 @@
-package info.androidhive.navigationdrawer.fragment.feed;
+package info.androidhive.navigationdrawer.subfragment;
 
 
 import android.os.Bundle;

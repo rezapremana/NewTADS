@@ -11,11 +11,10 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import info.androidhive.navigationdrawer.R;
-import info.androidhive.navigationdrawer.fragment.feed.MyFeedFragment;
-import info.androidhive.navigationdrawer.fragment.feed.MyLocalFeedFragment;
+import info.androidhive.navigationdrawer.subfragment.MyFeedFragment;
+import info.androidhive.navigationdrawer.subfragment.MyLocalFeedFragment;
 
 /**
  * A simple {@link Fragment} subclass.
